@@ -8,31 +8,31 @@ dos exercícios e projetos propostos na grade curricular do curso.
 
 ## 1.Caminhando na memória
 
- Exemplo de declaração de ponteiro: 
+Exemplo de declaração de ponteiro: 
 
- `int *ponteiro;` * é o operador unário.
+`int *ponteiro;` * é o operador unário.
 
- para recuperar o endereço utilizamos `&`.
+para recuperar o endereço utilizamos `&`.
  
 
- **Exemplo:**
+**Exemplo:**
 
- `int *ponteiro, x;`
+`int *ponteiro, x;`
  
- `ponteiro = &x;` & é o operador de endereço.
+`ponteiro = &x;` & é o operador de endereço.
 
- Esse exemplo mostra que, a variável ponteiro recebe o endereço de `x`.
+Esse exemplo mostra que, a variável ponteiro recebe o endereço de `x`.
  
- Para adquirir o conteúdo da variável ponteiro usamos o `*` novamente.
+Para adquirir o conteúdo da variável ponteiro usamos o `*` novamente.
  
- `int *ponteiro, x, y;`
+`int *ponteiro, x, y;`
  
- `x = 2.`
+`x = 2.`
  
- `ponteiro = &x;`
+`ponteiro = &x;`
  
- `y = *ponteiro;` nesse caso o * é o operador **dereferência**.
+`y = *ponteiro;` nesse caso o * é o operador **dereferência**.
  
- `int x, *pontx = &x;` pont aponta para x.
+`int x, *pontx = &x;` pont aponta para x.
  
- se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
+se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
