@@ -6,7 +6,7 @@ dos exercícios e projetos propostos na grade curricular do curso.
 
 # Ponteiros em C
 
-## 1.Caminhando na memória
+## 1.Introdução
 
 Exemplo de declaração de ponteiro: 
 
@@ -36,3 +36,5 @@ Para adquirir o conteúdo da variável ponteiro usamos o `*` novamente.
 `int x, *pontx = &x;` pont aponta para x.
  
 se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
+
+## 1.Caminhandoo na memória
