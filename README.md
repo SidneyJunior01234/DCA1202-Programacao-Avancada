@@ -6,6 +6,5 @@ dos exercícios e projetos propostos na grade curricular do curso.
 
 # Ponteiros em C
 
-## 1.Introdução
-
-## 1.Caminhandoo na memória
+### 1.Introdução
+### 2.Caminhandoo na memória
