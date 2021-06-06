@@ -31,4 +31,4 @@ Para adquirir o conteúdo da variável ponteiro usamos o `*` novamente.
  
 se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
 
-## 2.Caminhandoo na memória
+## 2.Caminhando na memória
