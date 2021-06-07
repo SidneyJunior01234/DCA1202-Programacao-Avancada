@@ -48,6 +48,22 @@ Errado! vai para 1004 pois depende para o qual o tipo de dado é apontado, no ca
 ```
 #include <stdio.h>
 
+int main() 
+{
+    unsigned int x; //ocupa 4 bytes na memoria
+    unsigned char *px; //ocupa 1 byte na memoria
+    x = 289;
+    px = &x; //px aponta/recebe a posicao de x na memoria
+    printf("%d\n",*px); //33 -> quantidade de bits para completar 289 com o 256 do incremento
+    px += 1; //caminha um passo na memoria por causa do unsigned char
+    printf("%d\n",*px); // 1 -> 256
+    return 0;
+}
+```
+
+```
+#include <stdio.h>
+
 int main()
 {
     unsigned int x; //ocupa 4 bytes na memoria
