@@ -1,4 +1,4 @@
-`"%x\n",p` -> endereco em hexadecimal assumindo p apontando para um unsigned int.
+`"%x\n",p` -> endereco em hexadecimal assumindo que, p aponta para um unsigned int.
 
 `"%d\n",*p` -> mostra o valor guardado em i para o qual p aponta, com isso temos que:
 
