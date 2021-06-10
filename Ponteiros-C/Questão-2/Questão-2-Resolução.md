@@ -1,4 +1,4 @@
-`"%x\n",p` -> endereco em hexadecimal assumindo que, p aponta para um unsigned int.
+`"%x\n",p` -> endereco em hexadecimal assumindo que, p aponta para um unsigned int, obtesmos FFE para o endereço 4049.
 
 `"%d\n",*p` -> mostra o valor guardado em i para o qual p aponta, com isso temos que:
 
