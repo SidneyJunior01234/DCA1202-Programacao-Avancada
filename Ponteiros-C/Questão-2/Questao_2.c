@@ -22,6 +22,7 @@ int main()
  
  printf("3**p = %d\n",(3**p));//operacao onde o valor inteiro para o qual p aponta sera multiplicado por 3, no caso resultando em 15.
 
-  printf("**&p+4 = %d\n",(**&p+4));//ponteiro para ponteiro de um valor em um endereco, com isso eh somado 4 resultando em 5 que eh o valorde i que p aponta +4 resultando em 9.
+  printf("**&p+4 = %d\n",(**&p+4));//ponteiro para ponteiro de um valor em um endereco, com isso eh somado 4 resultando em 5 que eh 
+  //o valorde i que p aponta +4 resultando em 9.
   return 0;
 }
