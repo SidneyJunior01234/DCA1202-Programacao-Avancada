@@ -13,7 +13,7 @@ int main()
   int pulo[5] = {1,2,3,4,5};
   
   *(pulo + 2);//esta expressao referencia o terceiro elemento, assumindo que o primeiro 
-  //indice do vetor e 0, temos 2 como terceiro indice que eh o terceiro elemnto.
+  //indice do vetor eh 0, temos 2 como terceiro indice que eh o terceiro elemnto.
   printf("%d\n",*(pulo + 2));//impresso 3
   *(pulo + 4);//4 eh o quinto elemento do vetor.
   printf("%d\n",*(pulo + 4));//impresso 5
