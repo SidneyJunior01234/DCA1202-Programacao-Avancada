@@ -24,13 +24,13 @@ int main()
   valor = 10;
   p1 = &valor;
   *p1 = 20;
-  printf("%d\n",valor);//sera impresso 20, p1 aponta para valor = 10 e sobrescreve por 20.
+  printf("%d\n",valor);//sera impresso 20, p1 aponta para valor = 10 e sobrescreve 10 por 20.
 
   /*(b)*/
   temp = 26.5;
   p2 = &temp;
   *p2 = 29.0;
-  printf("%.1f\n",temp);//sera impresso 29.0, p2 aponta para temp = 26.5 e sobrescreve por 29.0.
+  printf("%.1f\n",temp);//sera impresso 29.0, p2 aponta para temp = 26.5 e sobrescreve 26.5 por 29.0.
 
   /*(c)*/
   p3 = &nome[0];
@@ -41,17 +41,17 @@ int main()
   /*(d)*/
   p3 = &nome[4];
   aux = *p3;
-  printf("%c\n",aux);//sera impresso e, uma string é um arrat de caracteres, logo p3 aponta 
+  printf("%c\n",aux);//sera impresso e, uma string é um array de caracteres, logo p3 aponta 
   //para o endereco do quinto elemento de nome que esta no indice 4 e aux recebe esse valor.
 
   /*(e)*/
   p3 = nome;
   printf("%c\n",*p3);//sera impresso P, p3 aponta para o array de caracteres nome, mas nao fala 
-  //o indice e por padrao o endereco do primeiro indice e o que e apontado. 
+  //o indice e por padrao o endereco do primeiro indice eh o que eh apontado. 
 
   /*(f)*/
   p3 = p3 + 4;
-  printf("%c\n",*p3);////sera impresso e, o incremento no ponteiro nos permite caminhar pelo array 
+  printf("%c\n",*p3);//sera impresso e, o incremento no ponteiro nos permite caminhar pelo array 
   //indo para 4 indices a frente, no caso o elemento 5 do array.
 
   /*(g)*/
