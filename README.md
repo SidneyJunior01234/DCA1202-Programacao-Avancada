@@ -8,3 +8,4 @@ dos exercícios e projetos propostos na grade curricular do curso.
 
 ### 1.Introdução
 ### 2.Caminhando na memória
+### 3.Caminhando no array
