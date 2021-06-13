@@ -25,10 +25,10 @@ int main()
   q = &j;//atribuicao legal, q consegue apontar para j. Pois ha o operador de endereco.
   printf("q = &j; -> %d\n",*q);
 
-  p = &*&i;//&(*(&i)) endereco do valor armazenado no endereco de i, basicamente o endereco de i que eh 3, atribuicao legal.
+  p = &*&i;//&(*(&i)) endereco do valor armazenado no endereco de i, basicamente o endereco de i que guarda o valor 3, atribuicao legal.
   printf("p = &*&i; -> %d\n",*p);
 
-  i = (*&)j;//atribuicao nao legal, i nao consegue receber o vaor do endereco, pooi o j esta fora dos parenteses. 
+  i = (*&)j;//atribuicao nao legal, i nao consegue receber o valor do endereco, pois o j esta fora dos parenteses. 
   
   i = *&j;//atribuicao legal, i so esta recebendo o valor guardado no endereco de j que eh 5.
   printf("i = *&j; -> %d\n",i);
