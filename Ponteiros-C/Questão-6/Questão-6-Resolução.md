@@ -1,6 +1,6 @@
-| Elementos | 1 | 2 | 3 | 4 | 5 |
-|:---------:|:-:|---|---|---|---|
-|  Índices  | 0 | 1 | 2 | 3 | 4 |
+| Elementos |  1° |  2° |  3° |  4° |  5° |
+|:---------:|:---:|-----|-----|-----|-----|
+|  Índices  |  0  |  1  |  2  |  3  |  4  |
 
 `*(pulo + 2);` -> essa expressão referencía o terceiro elemento do vetor, assumindo que o primeiro 
 índice do vetor é 0, temos 2 como terceiro índice que é o terceiro elemento.
