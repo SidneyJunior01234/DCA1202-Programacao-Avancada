@@ -142,6 +142,69 @@ for(i = 0; i < 10; i++)
         *p = 10, enderec = 0x7ffc316e3c84
 ```
 ## 4.Alocando arrays
+
+Alocação dinâmica de memóri: são funções que permitem alocar e liberar memória em tempo de execução. Sendo assim,
+permite para o programador gerenciar o uso de memória. Para alocar é necessário o uso de ponteiros para guardar os
+endereços alocados.
+
+A alocação é feita da seguinte maneira:
+Importe da biblioteca stdlib.h `#inclide <stdlib.h>`.
+e usando o malloc `void* malloc(size_t size);`
+
+No malloc passamos a quantidade de elementos * o tamanho do tipo do elemnto.
+`int -> 4 bytes
+ quero 10 elentos inteiros
+ logo tenho 10 * 4 = 40
+ malloc(40) ou malloc(10 * sizeof(int))
+ sizeof(int) nos dá o tamanho do inteiro então não precisamos
+ calcular antes de adicionar no malloc, basta informar a
+ quantidade de elementos e multiplicar pelo sizeof do tipo do elemnto
+`
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+   int *x;
+   x = malloc(10 * sizeof(int));//alocando o vetor
+}
+```
+Após alocar e usar o array alocado, temos que liberar a memória. Para isso usamos o `free(ponteiro)`
+
+**Exemplo de código:**
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+/*malloc(size_t __size) aloca o bloco de memoria
+ *free libera o bloco de memoria
+ *sempre tem que liberar
+ *evita o vazamento de memoria
+*/
+int main() 
+{
+  //malloc(int_tam * byte_type)
+  int *x;
+  x = malloc(10 * sizeof(int));//alocando o vetor
+
+  for(int i = 0; i < 10; i++)
+  {
+    *(x + i) = i+1;
+  }
+
+  for(int i = 0; i < 10; i++)
+  {
+    printf("valor = %d, enderec = %p\n",*(x + i),x);
+  }
+  //free(ponteiro) libera a memoria usado pelo malloc
+  free(x);
+  //free(x);//alteracao duplicada, ja foi liberado. Aparece um erro! se tentar liberar novamente
+  return 0;
+}
+```
+
 ## 5.Alocando matrizes
 
 A alocação dinâmica das matrizes são operadas usando ponteiros multidimensionais.
