@@ -158,15 +158,21 @@ A alocação é feita da seguinte maneira:
 Importe da biblioteca stdlib.h `#inclide <stdlib.h>`.
 e usando o malloc `void* malloc(size_t size);`
 
-No malloc passamos a quantidade de elementos * o tamanho do tipo do elemnto.
-`int -> 4 bytes
- quero 10 elentos inteiros
- logo tenho 10 * 4 = 40
- malloc(40) ou malloc(10 * sizeof(int))
- sizeof(int) nos dá o tamanho do inteiro então não precisamos
- calcular antes de adicionar no malloc, basta informar a
- quantidade de elementos e multiplicar pelo sizeof do tipo do elemnto
-`
+No malloc passamos a quantidade de elementos x(multiplicação) o tamanho do tipo do elemnto.
+`int -> 4 bytes`
+
+`quero 10 elentos inteiros`
+
+`logo tenho 10 * 4 = 40`
+
+`malloc(40) ou malloc(10 * sizeof(int))`
+
+`sizeof(int) nos dá o tamanho do inteiro então não precisamos`
+
+`calcular antes de adicionar no malloc, basta informar a`
+
+`quantidade de elementos e multiplicar pelo sizeof do tipo do elemnto`
+
 ```
 #include <stdio.h>
 #include <stdlib.h>
