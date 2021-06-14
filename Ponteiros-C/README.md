@@ -76,3 +76,70 @@ int main()
     return 0;
 }
 ```
+
+## 3.Caminhando em arrays
+
+representação de um array (vetor)
+
+| Elementos | 1 | 2 | 3 | 4 | 5 |
+|:---------:|:-:|---|---|---|---|
+|  Índices  | 0 | 1 | 2 | 3 | 4 |
+
+array é uma estrutura indexada que nos permite guardar uma quantidade de informações. Uma vez que incrementamos e decrementamos seus índices, podemos estar acessando 
+os elementos guardados no array.
+
+criando o array e o ponteiro que aponta para ele.
+```
+int x[10]; //array com capacidade para 10 elementos
+  int *px; //ponteiro que aponta para o array nao precisa de &
+  //array ja eh referenciado
+  int i; // indexador
+
+  px = x; //ponteiro que aponta para o array nao, precisa de & array ja eh referenciado
+  //aqui o px aponta para x[0]
+```
+
+preenchendo e imprimindo valores.
+
+```
+//adicionando elementos no array
+  for(i = 0; i < 10; i++)
+  {
+    //x[i] = i + 1;
+    //*(px+i) = i + 1;
+    px[i] = i + 1; // tambem funciona
+  }
+  //mostrando na tela os valores do arrray
+  for(i = 0; i < 10; i++)
+  {
+    printf("%d ",x[i]);
+  }
+  
+  Saída: 1 2 3 4 5 6 7 8 9 10
+```
+imprimindo os valores e endereço, uma forma de observar o conteúdo anterior. Pois estamos lidando com inteiros que ocupam 4 bytes na memória,
+logo observamos que para cada espaço alocado temos uma diferença de 4 bytes no endereço.
+
+```
+for(i = 0; i < 10; i++)
+  {
+    //printf("*p = %d, enderec = %p\n",*(px + 1 + i),(px + 1 + i)); // imprimindo o valor que px aponta e seu endereco
+    //altero a posicao *(px+1+i),px+1+i) sem alterar o array
+    //px = px + 1;//incrementando uma posicao
+    printf("*p = %d, enderec = %p\n",px[i+1],(px + 1 + i)); //tambem funciona
+  }
+  
+  Saída:
+        *p = 1, enderec = 0x7ffc316e3c60
+        *p = 2, enderec = 0x7ffc316e3c64
+        *p = 3, enderec = 0x7ffc316e3c68
+        *p = 4, enderec = 0x7ffc316e3c6c
+        *p = 5, enderec = 0x7ffc316e3c70
+        *p = 6, enderec = 0x7ffc316e3c74
+        *p = 7, enderec = 0x7ffc316e3c78
+        *p = 8, enderec = 0x7ffc316e3c7c
+        *p = 9, enderec = 0x7ffc316e3c80
+        *p = 10, enderec = 0x7ffc316e3c84
+```
+
+## 4.Caminhando em matrizes
