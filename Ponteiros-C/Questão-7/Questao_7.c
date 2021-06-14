@@ -4,7 +4,6 @@ Disciplina: DCA1202 - Programacao Avancada
 Autor: Sidney Alves dos Santos Junior
 Descricao: Considerando a declaração int mat[4], *p, x;, quais das seguintes expressões abaixo são válidas?
 Justifique.
-
 */
 #include <stdio.h>
 
