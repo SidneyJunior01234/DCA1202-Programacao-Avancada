@@ -1,8 +1,8 @@
 Para x um vetor: `TIPO x[4];` sua posição `x[0]` tem o endereço `4092`.
 
-Assumindo que: char ocupa 1 byte, int ocupa 2 bytes, float ocupa 4 bytes e double ocupa 8 bytes.
+Assumindo que: `char` ocupa `1 byte`, `int` ocupa `2 bytes`, `float` ocupa `4 bytes` e `double` ocupa `8 bytes`.
 
-Quais serão os valores de x+1, x+2 e x+3 se:
+Quais serão os valores de `x + 1`, `x + 2` e `x + 3` se:
 
 como não está sendo usado o operador dereferência, será impresso o endereço de cada posição do vetor.
 
