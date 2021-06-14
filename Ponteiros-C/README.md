@@ -6,7 +6,7 @@ Exemplo de declaração de ponteiro:
 
 `int *ponteiro;` * é o operador unário.
 
-para recuperar o endereço utilizamos `&`.
+Para recuperar o endereço utilizamos `&`.
  
 
 **Exemplo:**
@@ -29,7 +29,7 @@ Para adquirir o conteúdo da variável ponteiro usamos o `*` novamente.
  
 `int x, *pontx = &x;` pont aponta para x.
  
-se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
+Se eu fizer `printf("%p",pont)` será mostrado o endereço do ponteiro. `%p` mostra um hexadecimal.
 
 ## 2.Caminhando na memória
 
@@ -39,7 +39,7 @@ A cada increnento (++ ou +valor) ou decremento (-- ou -valor) o ponteiro caminha
 
 **Exemplo 1:**
 
-endereço 1000 da memória e um ponteiro que aponta para um inteiro (4 bytes), ao incrementar mais um (ponteiro++) o endereço vai para 1001...
+Endereço 1000 da memória e um ponteiro que aponta para um inteiro (4 bytes), ao incrementar mais um (ponteiro++) o endereço vai para 1001...
 
 Errado! vai para 1004 pois depende para o qual o tipo de dado é apontado, no caso um inteiro (4 bytes) se fosse um char (1 byte) seria 1001.
 
@@ -79,13 +79,13 @@ int main()
 
 ## 3.Caminhando em arrays
 
-representação de um array (vetor)
+Representação de um array (vetor)
 
 | Elementos | 1 | 2 | 3 | 4 | 5 |
 |:---------:|:-:|---|---|---|---|
 |  Índices  | 0 | 1 | 2 | 3 | 4 |
 
-array é uma estrutura indexada que nos permite guardar uma quantidade de informações. Uma vez que incrementamos e decrementamos seus índices, podemos estar acessando 
+Array é uma estrutura indexada que nos permite guardar uma quantidade de informações. Uma vez que incrementamos e decrementamos seus índices, podemos estar acessando 
 os elementos guardados no array.
 
 criando o array e o ponteiro que aponta para ele.
@@ -99,7 +99,7 @@ int x[10]; //array com capacidade para 10 elementos
   //aqui o px aponta para x[0]
 ```
 
-preenchendo e imprimindo valores.
+Preenchendo e imprimindo valores.
 
 ```
 //adicionando elementos no array
@@ -117,7 +117,7 @@ preenchendo e imprimindo valores.
   
   Saída: 1 2 3 4 5 6 7 8 9 10
 ```
-imprimindo os valores e endereço, uma forma de observar o conteúdo anterior. Pois estamos lidando com inteiros que ocupam 4 bytes na memória,
+Imprimindo os valores e endereço, uma forma de observar o conteúdo anterior. Pois estamos lidando com inteiros que ocupam 4 bytes na memória,
 logo observamos que para cada espaço alocado temos uma diferença de 4 bytes no endereço.
 
 ```
@@ -141,5 +141,57 @@ for(i = 0; i < 10; i++)
         *p = 9, enderec = 0x7ffc316e3c80
         *p = 10, enderec = 0x7ffc316e3c84
 ```
+## 4.Alocando arrays
+## 5.Alocando matrizes
 
-## 4.Caminhando em matrizes
+A alocação dinâmica das matrizes são operadas usando ponteiros multidimensionais.
+`int **mat` é um ponteiro para ponteiro para inteiro.
+
+**Exemplo:**
+
+`int **x;`
+
+Temo então o array auxiliar. Responsável por guardar os endereços de outros arrays, logo o array auxiliar
+são as linhas da nosa matriz.
+| int* A |
+|:------:|
+|    B   |
+|    C   |
+|    D   |
+
+Os endereços guardados no array auxiliar, nos permite acessar os array que se comportam como as colunas da nossa matriz.
+| int A |   |   |   |   |
+|:-----:|:-:|:-:|:-:|:-:|
+|   B   |   |   |   |   |
+|   C   |   |   | E |   |
+|   D   |   |   |   |   |
+
+Acessando o elemento `x[2][3]`
+
+```
+*(x + 2) -> int* C que aponta para outro array
+*(x + 2) + 3 -> E endereço do inteiro.
+*(*(x + 2) + 3) -> valor de x[2][3]
+```
+
+Alocando a matriz:
+
+```
+int nl = 3, nc = 3;
+  int **x;
+
+  //alocando a coluna auxiliar
+  x = malloc(nl * sizeof(int*));
+  //alocando as linhas
+  for(int i = 0; i < nl; i++)
+  {
+    x[i] = malloc(nc * sizeof(int));
+  }
+  x[0][0] = 1;
+  //liberando o espaco
+  for(int i = 0; i < nl; i++)
+  {
+    free(x[i]);//liberando a memoria para cada array que esta sendo apontado
+  }
+  free(x);//liberando a memoria do array auxiliar
+```
