@@ -1,4 +1,11 @@
 # Ponteiros em C
+#### [Questão 1](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-1/Quest%C3%A3o-1-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 2](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-2/Quest%C3%A3o-2-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 3](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-3/Quest%C3%A3o-3-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 4](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-4/Quest%C3%A3o-4-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 5](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-5/Quest%C3%A3o-5-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 6](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-6/Quest%C3%A3o-6-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 7](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-7/Quest%C3%A3o-7-Resolu%C3%A7%C3%A3o.md)
 
 ## 1.Introdução
 
