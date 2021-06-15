@@ -9,6 +9,7 @@
 #### [Questão 8](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-8/Quest%C3%A3o-8-Resolu%C3%A7%C3%A3o.md)
 #### [Questão 9](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-9/Quest%C3%A3o-9-Resolu%C3%A7%C3%A3o.md)
 #### [Questão 10](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-10/Quest%C3%A3o-10-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 11](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-11/Ques%C3%A3o-11-Resolu%C3%A7%C3%A3o.md)
 
 ## 1.Introdução
 
