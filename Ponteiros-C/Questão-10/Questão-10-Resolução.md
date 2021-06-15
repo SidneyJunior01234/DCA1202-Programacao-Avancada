@@ -2,6 +2,9 @@ Comparando as saídas do programa feito em C, os valores esperados estão de aco
 
 O inteiro ocupa 4 bytes e os endereços impressos são de 4 em 4 bytes. Por isso devemos assumir que int vale 2 bytes.
 
+O programa [Questao_10.c](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-10/Questao_10.c)
+imprime as informações a seguir nos exemplos de saídas.
+
 **Exemplos de saídas**
 
 ```
