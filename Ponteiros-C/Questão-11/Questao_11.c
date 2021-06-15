@@ -1,3 +1,9 @@
+/*
+Instituicao: Universidade Federal do Rio Grande do Norte
+Disciplina: DCA1202 - Programacao Avancada
+Autor: Sidney Alves dos Santos Junior
+Descricao: Identifique quais dos seguintes comandos é válido ou inválido.
+*/
 #include <stdio.h>
 
 int main()
