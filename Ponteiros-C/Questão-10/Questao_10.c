@@ -1,3 +1,10 @@
+/*
+Instituicao: Universidade Federal do Rio Grande do Norte
+Disciplina: DCA1202 - Programacao Avancada
+Autor: Sidney Alves dos Santos Junior
+Descricao: Implemente um programa de computador para testar estas suposições e compare as respostas
+oferecidas pelo programa com as respostas que você idealizou.
+*/
 #include <stdio.h>
 
 int main()
