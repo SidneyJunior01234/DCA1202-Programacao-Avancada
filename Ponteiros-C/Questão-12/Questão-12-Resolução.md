@@ -18,4 +18,4 @@ int main()
 }
 ```
 
-[Exemplo](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-12/Questao_12.c)
+[Questao_12.c](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-12/Questao_12.c)
