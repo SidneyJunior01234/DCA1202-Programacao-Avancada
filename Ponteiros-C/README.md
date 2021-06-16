@@ -275,3 +275,61 @@ int nl = 3, nc = 3;
   }
   free(x);//liberando a memoria do array auxiliar
 ```
+
+Um problema em relação a alocação dinâmica de matrizes, é a não continuidade das linhas quando alocadas no HEAP.
+
+Isso oferece limitações de tempo e espaço na memória. Para isso é preciso garantir que os dados da matriz estejam agrupados.
+
+**Solução:** alocar um único bloco de tamanho **m x n**
+
+Matriz m x n
+| A |  B | C | ... | n |
+|:-:|:--:|:-:|:---:|:-:|
+
+Vetor auxiliar: irá apontar endereços dos inícios das linhas, que serão alocadas em um bloco contínuos.
+| A |  B | C | ... | n |
+|:-:|:--:|:-:|:---:|:-:|
+
+**Etapas:**
+
+1.Criação do ponteiro e variáveis a serem utilizadas.
+```
+int **x, nl, nc, i;
+```
+
+2.Alocar o bloco auxiliar
+```
+x = malloc(nl * sizeof(int*));
+```
+| A |  B | C | ... | n |
+|:-:|:--:|:-:|:---:|:-:|
+
+3.Alocação das linhas
+
+As linhas são alocadas no primeiro elemento do bloco auxiliar
+```
+z[0] = malloc(nc * nl * sizeof(int));
+```
+| A |  B | C | ... | n |
+|:-:|:--:|:-:|:---:|:-:|
+
+4.Fixar os ponteiros
+
+Guardar os endereços desde o primeiro elemento ao último elemento da matriz.
+`z[i - 1] + nc` vai para nc elementos adiantes, no caso o primeiro elemento da próxima linha.
+```
+for(i = 1; i < nl; i++)
+{
+    z[i] = z[i - 1] + nc;
+}
+```
+
+5.Liberar a matriz
+```
+free(x[0]);
+```
+
+6.Liberar o bloco auxiliar
+```
+free(x);
+```
