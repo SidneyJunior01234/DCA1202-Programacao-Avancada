@@ -333,3 +333,76 @@ free(x[0]);
 ```
 free(x);
 ```
+## 6.Structs
+
+Os structs permitem agregar características em uma variável, podemos dizer que estamos "criando um tipo de variável".
+
+```
+struct Imagem
+{
+    char formato[MAX_EXTEN];//ppm, jpg, png, jpeg
+    int altura; //linhas
+    int largura; //colunas
+    int pixels[MAX_PIXELS][MAX_PIXELS];
+};
+```
+
+Para acessar os atributos da estrutura, utilizamos `->`.
+
+```
+#include <stdio.h>
+
+struct Discente
+{
+    char nome[200];
+    char matricula[11];
+    float notas[4];
+    float media;
+};
+
+int main()
+{
+    struct Discente discente, *dis;
+    
+    dis = &discente;
+    
+    printf("Nome do discente: ");
+    scanf("%s",dis->nome);
+    
+    dis->media = 6.9;
+    printf("%s tem media %0.2f",dis->nome,dis->media);
+    return 0;
+}
+```
+| Enradas |         Saídas       |
+|:-------:|:--------------------:|
+|   João  |  João tem media 6.90 |
+|  Pedro  | Pedro tem media 6.90 |
+
+Podemos também **Alocar arrays de estruturas**.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Discente
+{
+  char nome[200];
+  char matricula[11];
+  float notas[4];
+  float media;
+};
+
+int main()
+{
+  struct Discente *dis;
+
+  dis = malloc(10 * sizeof(struct Discente));
+  
+  dis[1].media = 5.0; // pode ser tambem (dis + 1)->media = 5.0 
+  printf("media do discente 2: %.2f",(dis + 1)->media);
+  free(dis);
+
+  return 0;
+}
+```
