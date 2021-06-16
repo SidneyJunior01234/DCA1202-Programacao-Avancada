@@ -505,5 +505,5 @@ int main(void)
 Podemos também criar funções genéricas.
 
 ```
-float trapezio(float (*func)(float), float a, float b, int n)
+float trapezio(float (*func)(float), float a, float b, int n);
 ```
