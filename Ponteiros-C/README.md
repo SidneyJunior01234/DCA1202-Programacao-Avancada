@@ -406,3 +406,104 @@ int main()
   return 0;
 }
 ```
+
+## 7.Ponteiros para funções
+
+Ponteiros para funções guardam os endereços para **áreas de códigos**.
+
+temos a seguinte função:
+```
+int Funcao(int a)
+{
+    return a;
+}
+```
+
+Agora será criado o ponteiro para a função, mas como?
+
+Resposta: da seguinte maneira.
+```
+int (*pf)(int) = &Funcao;
+```
+A declaração do ponteiro precisa de um tipo de retorno `int`, um nome `(*nome_ponteiro)`, informar os parâmetros recebidos `(int)` e passo o endereço da função `&Funcao`. 
+
+Mas como utilizamos o ponteiro?
+```
+printf("usamos assim...\n");
+printf("numero %d", pf(1));
+```
+
+**Exemplos:**
+```
+#include <stdio.h>
+
+int Soma(int a,int b)
+{
+    return a+b;
+}
+
+int main()
+{
+    int (*pf)(int,int) = &Soma;
+    
+    printf("valor = %d",pf(2,2));
+    return 0;
+}
+```
+
+```
+#include <stdio.h>
+void soma(int a, int b)
+{
+  printf("soma = %d", (a+b));
+}
+
+void subtracao(int a, int b)
+{
+  printf("subtracao = %d", (a-b));
+}
+void multiplicacao(int a, int b)
+{
+  printf("multiplicacao = %d", (a*b));
+}
+
+void divisao(int a, int b)
+{
+  printf("divisao = %.2f", ((a*1.0)/b));
+}
+
+int main() 
+{
+  void (*pf_array[])(int,int) = {soma,subtracao,multiplicacao,divisao};
+  int opcao = 3, a = 4, b = 3;
+  (*pf_array[opcao])(a,b);
+  return 0;
+}
+```
+
+Podemos passar também ponteiros para funções como parâmetro de outras funções.
+
+```
+#include <stdio.h>
+
+int funcao(int a)
+{
+  return a;
+}
+void alo(int (*f)(int))
+{
+  printf("retorno = %d",f(3));
+}
+
+int main(void) 
+{
+  alo(funcao);
+  return 0;
+}
+```
+
+Podemos também criar funções genéricas.
+
+```
+float trapezio(float (*func)(float), float a, float b, int n)
+```
