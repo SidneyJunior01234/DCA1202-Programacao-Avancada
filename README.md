@@ -11,6 +11,8 @@ dos exercícios e projetos propostos na grade curricular do curso.
 ### 3.Caminhando no array
 ### 4.Alocando vetores
 ### 5.Alocando matrizes
+### 6.Structs
+### 7.Ponteiros para funções
 
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
