@@ -4,7 +4,7 @@ Nesse repositório estará armazenado os códigos fontes
 
 dos exercícios e projetos propostos na grade curricular do curso.
 
-# Ponteiros em C
+# [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/README.md)
 
 ### 1.Introdução
 ### 2.Caminhando na memória
