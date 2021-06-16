@@ -17,3 +17,5 @@ int main()
   return 0;
 }
 ```
+
+[Exemplo](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-12/Questao_12.c)
