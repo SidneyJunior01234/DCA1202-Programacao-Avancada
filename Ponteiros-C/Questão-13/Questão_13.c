@@ -15,31 +15,34 @@ ordenar_crescente eh responsavel por ordenar o vetor em ordem crescente,
 tem como parametro: dois ponteiros para funcoes do tipo void com parametros 
 inteiros sendo um deles ponteiro tambem. Um ponteiro para vetor do tipo inteiro
 e um inteiro referente ao tamanho do vetor.
+
+na funcao main, um vetor esta sendo alocado, com isso podemos preencher, ordenar 
+e liberar o espaco alocado.
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-void coletar_dados(int *vetor, int n)
+void coletar_dados(float *vetor, int n)
 {
   for (int i = 0; i < n; i++) 
   {
     printf("%d valor: ",(i+1));
-    scanf("%d",&vetor[i]);
+    scanf("%f",&vetor[i]);
         
   }
   printf("\nvalores coletados\n");
 }
 
-void imprime_dados(int *vetor, int n)
+void imprime_dados(float *vetor, int n)
 {
   for (int i = 0; i < n; i++) 
   {
-    printf("%d ",vetor[i]);
+    printf("%.2f ",vetor[i]);
   }
 }
 
-void ordenar_crescente(void (*f)(int*,int),int *vetor, int n, void (*i)(int*,int))
+void ordenar_crescente(void (*f)(float*,int),float *vetor, int n, void (*i)(float*,int))
 {
   int aux = 0;
     
@@ -65,11 +68,12 @@ void ordenar_crescente(void (*f)(int*,int),int *vetor, int n, void (*i)(int*,int
 
 int main()
 {
-  int n, *vet;
+  int n;
+  float *vet;
   printf("informe a quantidade de dados a serem alocados: ");
   scanf("%d",&n);
 
-  vet = malloc(n * sizeof(int));//alocando o vetor
+  vet = malloc(n * sizeof(float));
     
   ordenar_crescente(coletar_dados,vet,n,imprime_dados);
 
