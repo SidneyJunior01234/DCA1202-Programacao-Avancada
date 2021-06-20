@@ -510,3 +510,158 @@ Podemos também criar funções genéricas.
 ```
 float trapezio(float (*func)(float), float a, float b, int n);
 ```
+
+## 8.Arquivos
+#### 8.1.Caracteres e Literais
+
+Para ler/escrever da/na entrada/saída temos as funções: `getchar()` / `putchar()` (leitura e escrita pelo teclado/tela)
+
+
+Para ler/escrever de/em arquivos temos as funções: `getc()` / `putc()`
+
+**Exemplo:**
+
+```
+FILE *entrada, *saida;
+c = getc(entrada);
+putc(c,saida);
+```
+
+Com um arquivo com extensão .txt no mesmo diretório do programa, podemos compilar 
+o seguinte código.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+  FILE *fin, *fout;
+
+  int ch;
+  //verificar se os arquivos foram abertos
+  //ler arquivo
+  if( (fin = fopen("arquivo.txt", "r")) == NULL )
+  {
+    exit(1);
+  }
+  //escrever arquivo
+  if( (fout = fopen("arquivo_saida.txt", "w")) == NULL )
+  {
+    exit(1);
+  }
+
+  /*esperando a condicao de fim de arquivo
+   *enquanto isso atribui os caracteres a ch 
+   *depois escreve eno outro arquivo
+  */
+  while( (ch = getc(fin)) != EOF )
+  {
+    putc(ch, fout);
+  }
+  
+  //fechando os arquivos
+  fclose(fin);
+  fclose(fout);
+  return 0;
+}
+```
+
+Lidando com os literais.
+
+Para ler/escrever da/na entrada/saída temos as funções: `gets()` / `puts()` (leitura e escrita pelo teclado/tela)
+
+**NÃO USE o gets() (OBSOLETO), use o fgets()**
+
+Para ler/escrever de/em arquivos temos as funções: `fgets()` / `fputs()`
+
+**Exemplo:**
+
+```
+FILE *entrada, *saida;
+char buffer[50]; //local onde a variavel literal esta armazenada, com tamanho maximo
+fgets(buffer, 50, entrada);
+fputs(buffet, fout);
+```
+
+Com um arquivo no mesmo diretório do programa.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+  FILE *fin, *fout;
+
+  char buffer[50];
+  //verificar se os arquivos foram abertos
+  //ler arquivo
+  if( (fin = fopen("literal.txt", "r")) == NULL )
+  {
+    exit(1);
+  }
+
+  fgets(buffer,50,fin);
+
+  //escrever arquivo
+  if( (fout = fopen("literal_saida.txt", "w")) == NULL )
+  {
+    exit(1);
+  }
+
+  fputs(buffer,fout);
+  
+  //fechando os arquivos
+  fclose(fin);
+  fclose(fout);
+  return 0;
+}
+```
+
+**Lendo linhas por completo**
+
+`getline()` é responsável por ler uma linha por completo. Tem também a `getdelim`.
+
+Para a getline funcionar é necessário 3 parâmetros:
+
+`ssize_t getline(char **lineptr, size_t *n, FILE *stream);`
+
+`ssize_t`: retorno da quantidade de elementos qeu foram lidos em linha.
+
+`char **lineptr`: o arquivo de onde vai ser lido,
+
+`size_t *n`: reserva a memória necessária para alocar os elementos da linha,
+
+`ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);`
+
+`int delim`: delimitador. Pode ser passado uma `,` como delimitiador, então a linha será lida até a `,`.
+
+**Exemplo:**
+
+Com um arquivo no mesmo diretório do programa.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() 
+{
+  FILE *file;
+  char *linha = NULL;
+  size_t tam = 0;
+  int nlidos;
+
+  if( (file = fopen("entrada.txt","r")) == NULL )
+  {
+    exit(1);
+  }
+
+  while((nlidos = getline(&linha,&tam,file)) != -1)
+  {
+    printf("%s",linha);
+  }
+  fclose(file);
+  return 0;
+}
+```
