@@ -1,7 +1,8 @@
 /*
 Instituicao: Universidade Federal do Rio Grande do Norte
 Disciplina: DCA1202 - Programacao Avancada
-Autor: Sidney Alves dos Santos Junior
+Autor(es): Ana Beatriz Fontes Ferreira
+           Sidney Alves dos Santos Junior
 Descricao: criar um programa que realiza a multiplicacao
 de duas matrizes, onde a funcao que realiza a operacao
 recebe as matrizes e suas dimensoes.
