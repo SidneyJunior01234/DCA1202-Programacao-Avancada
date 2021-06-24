@@ -20,4 +20,6 @@ dos exercícios e projetos propostos na grade curricular do curso.
 
 # Autores
 
-[Ana Beatriz Fontes Ferreira](https://github.com/bfontes) e [Sidney Alves dos Santos Junior](https://github.com/SidneyJunior01234)
+[Ana Beatriz Fontes Ferreira](https://github.com/bfontes)
+
+[Sidney Alves dos Santos Junior](https://github.com/SidneyJunior01234)
