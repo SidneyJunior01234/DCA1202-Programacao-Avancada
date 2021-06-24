@@ -1,7 +1,8 @@
 /*
 Instituicao: Universidade Federal do Rio Grande do Norte
 Disciplina: DCA1202 - Programacao Avancada
-Autor: Sidney Alves dos Santos Junior
+Autor(es): Ana Beatriz Fontes Ferreira
+           Sidney Alves dos Santos Junior
 Descricao: criar uma funcao que soma dois vetores e armazena a soma em um terceiro vetor. 
 */
 #include <stdio.h>
