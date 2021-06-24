@@ -1,7 +1,8 @@
 /*
 Instituicao: Universidade Federal do Rio Grande do Norte
 Disciplina: DCA1202 - Programacao Avancada
-Autor: Sidney Alves dos Santos Junior
+Autor(es): Ana Beatriz Fontes Ferreira
+           Sidney Alves dos Santos Junior
 Descricao: Assumindo que pulo[] é um vetor do tipo int, quais das seguintes 
 expressões referenciam o
 valor do terceiro elemento do vetor?
