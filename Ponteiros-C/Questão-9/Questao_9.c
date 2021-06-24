@@ -1,7 +1,8 @@
 /*
 Instituicao: Universidade Federal do Rio Grande do Norte
 Disciplina: DCA1202 - Programacao Avancada
-Autor: Sidney Alves dos Santos Junior
+Autor(es): Ana Beatriz Fontes Ferreira
+           Sidney Alves dos Santos Junior
 Descricao: Seja x um vetor de 4 elementos, declarado da forma TIPO x[4];. Suponha que depois da
 declaração, x esteja armazenado no endereço de memória 4092 (ou seja, o endereço de x[0]).
 Suponha também que na máquina seja usada uma variável do tipo char ocupa 1 byte, do tipo
