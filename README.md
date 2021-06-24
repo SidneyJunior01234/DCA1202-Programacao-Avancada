@@ -18,4 +18,5 @@ dos exercícios e projetos propostos na grade curricular do curso.
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
 
-Autores: [Ana Beatriz Fontes Ferreira](https://github.com/bfontes) e [Sidney Alves dos Santos Junior](https://github.com/SidneyJunior01234)
+#Autores
+[Ana Beatriz Fontes Ferreira](https://github.com/bfontes) e [Sidney Alves dos Santos Junior](https://github.com/SidneyJunior01234)
