@@ -18,6 +18,7 @@
 #### [Questão 17](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-17/Quest%C3%A3o-17-Resolu%C3%A7%C3%A3o.md)
 #### [Questão 18](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-18/Quest%C3%A3o-18-Resolu%C3%A7%C3%A3o.md)
 #### [Questão 19](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-19/Quest%C3%A3o-19-Resolu%C3%A7%C3%A3o.md)
+#### [Questão 20](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Ponteiros-C/Quest%C3%A3o-20/Quest%C3%A3o-20-Resolu%C3%A7%C3%A3o.md)
 
 ## 1.Introdução
 
