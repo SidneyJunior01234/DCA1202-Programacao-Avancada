@@ -1,4 +1,4 @@
-Foi utilizada a biblioteca `time.h`.
+Foi utilizada a biblioteca `time.h` para verificar o tempo de execução do trecho de código.
 
 Importamos a biblioteca `#include <time.h>`, declaramos a variável `clock_t t;`, usamos o trecho de código que queremos 
 verificar o tempo de execução entre `t = clock();` e `t = clock() - t;`, e imprimir usando `printf("\nTempo de execucao: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));`.
