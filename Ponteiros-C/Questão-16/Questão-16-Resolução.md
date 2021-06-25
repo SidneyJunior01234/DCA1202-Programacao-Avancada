@@ -1,3 +1,8 @@
+Foi utilizada a biblioteca `time.h`.
+
+Importamos a biblioteca `#include <time.h>`, declaramos a variável `clock_t t;`, usamos o trecho de código que queremos 
+verificar o tempo de execução entre `t = clock();` e `t = clock() - t;`, e imprimir usando `printf("\nTempo de execucao: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));`.
+
 Execução do programa com o tempo de execução em [qsort](https://replit.com/@SidneyAlves1/Questao-14#main.c)
 
 Execução do programa com o tempo de execução em [Ssort](https://replit.com/@SidneyAlves1/Questao-15#main.c)
