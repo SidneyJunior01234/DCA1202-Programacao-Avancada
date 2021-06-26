@@ -1,11 +1,11 @@
-a) Será impresso `20`, p1 aponta para valor = 10 e é sobrescrito por 20.
+a) Será impresso `10`, p1 aponta para valor = 10 e é sobrescrito por 20.
 ```
 valor = 10;
 p1 = &valor;
 *p1 = 20;
 printf("%d\n",valor);
 ```
-b) Será impresso `29.0`, p2 aponta para temp = 26.5 e é sobrescrito por 29.0.
+b) Será impresso `26.5`, p2 aponta para temp = 26.5 e é sobrescrito por 29.0.
 ```
 temp = 26.5;
 p2 = &temp;
