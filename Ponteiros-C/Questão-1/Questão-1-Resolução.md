@@ -43,7 +43,7 @@ que estamos apontando para esse endereço, ou seja, estamos apontando para o end
 `Resposta: retorna o valor armazenado em i que é 3.`
 
 ```3 - *p/(*q) + 7;``` -> Aqui temos outra operação aritmética, mas agora utilizando divizão. Devido a precedência dos operadores
-dividimos os valores armazenados na mémoria ao qual os ponteiros apontam e temos `*p/(*q) = 3/7` se considerarmos inteiro, temos o
-resultado igual a 0. com isso resta somente `3 + 7 = 10` como resposta final.
+dividimos os valores armazenados na mémoria ao qual os ponteiros apontam e temos `*p/(*q) = 3/5` se considerarmos inteiro, temos o
+resultado igual a 2. com isso resta somente `2 + 7 = 9` como resposta final. Mas o resultado da expressão é 9.4.
 
 `Resposta: retorna 10.`
