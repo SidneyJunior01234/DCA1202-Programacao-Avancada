@@ -46,4 +46,4 @@ que estamos apontando para esse endereço, ou seja, estamos apontando para o end
 dividimos os valores armazenados na mémoria ao qual os ponteiros apontam e temos `*p/(*q) = 3/5` se considerarmos inteiro, temos o
 resultado igual a 2. com isso resta somente `2 + 7 = 9` como resposta final. Mas o resultado da expressão é 9.4.
 
-`Resposta: retorna 10.`
+`Resposta: retorna 9.4.`
