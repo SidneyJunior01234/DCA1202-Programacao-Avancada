@@ -15,6 +15,8 @@ dos exercícios e projetos propostos na grade curricular do curso.
 ### 7.Ponteiros para funções
 ### 8.Arquivos
 
+# [Programação em C++](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Programa%C3%A7%C3%A3o%20em%20C%2B%2B/README.md)
+
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
 
