@@ -164,4 +164,4 @@ Para acessar os atributos e métodos das classes, usamos o `.`(ponto).
 **Getter e Setter** São responsáveis por pegar ou adicionar valores aos atributos. Esses métodos devem ser públicos para que outras classes
 possam adicionar ou recuperar valores. Além disso esses métodos são uma forma de proteção dos atributos.
 
-Chamamos essa proteção de **Encapsulamento** um dos pilares da **POO**. 
+Chamamos essa proteção de **Encapsulamento**, um dos pilares da **POO**. 
