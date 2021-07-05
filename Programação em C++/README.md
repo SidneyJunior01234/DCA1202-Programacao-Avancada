@@ -165,3 +165,79 @@ Para acessar os atributos e métodos das classes, usamos o `.`(ponto).
 possam adicionar ou recuperar valores. Além disso esses métodos são uma forma de proteção dos atributos.
 
 Chamamos essa proteção de **Encapsulamento**, um dos pilares da **POO**. 
+
+## 3.Programando em Módulos
+
+Para modularizar, devemos ter os arquivos `.cpp` e `.h ou .hpp`. Usando o exemplo anterior:
+
+**ponto2D.h**
+```
+#ifndef PONTO2D_H
+#define PONTO2D_H
+
+class Ponto2D
+{
+    private:
+        float x, y;
+    public:
+        void X(float _x);
+        float X(void);
+        void Y(float _y);
+        float Y(void);
+};
+
+#endif
+```
+
+Para definir os métodos da classe, usamos o operador de escopo `::` da seguinte maneira.
+
+`tipo` de retorno do método, `classe` ao qual pertence, `::` operador de escopo, `nome` da função e `parâmetros` da função.
+
+```
+tipo classe :: nome(parametros)
+{
+    //trecho de código
+}
+```
+
+**ponto2D.cpp**
+```
+#include "ponto2D.h"
+
+void Ponto2D :: X(float _x)
+{
+    x = _x;
+}
+float Ponto2D :: X(void)
+{
+    return x;
+}
+void Ponto2D :: Y(float _y)
+{
+    y = _y;
+}
+float Ponto2D :: Y(void)
+{
+    return y;
+}
+```
+
+**main.cpp**
+
+```
+#include <iostream>
+#include "ponto2D.h"
+
+int main()
+{
+    Ponto2D p;
+    p.X(2);
+    p.Y(2);
+    std::cout << "(x,y) = (" << p.X << ',' << p.Y << ")\n"; 
+    return 0;
+}
+```
+
+As diretivas `#ifndef`,`#define` e `#endif` auxiliam na compilação do programa. Ao compilar é criado algo similar a um simbolo referente ao programa,
+`#ifndef` - se o simbolo não existir, `#define` - o simbolo é criado e `#endif` - finaliza a condição. Sendo que se o simbolo já existir, o programa não precisa compilar
+novamente.
