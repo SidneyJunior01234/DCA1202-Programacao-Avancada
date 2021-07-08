@@ -241,3 +241,83 @@ int main()
 As diretivas `#ifndef`,`#define` e `#endif` auxiliam na compilação do programa. Ao compilar é criado algo similar a um simbolo referente ao programa,
 `#ifndef` - se o simbolo não existir, `#define` - o simbolo é criado e `#endif` - finaliza a condição. Sendo que se o simbolo já existir, o programa não precisa compilar
 novamente.
+
+## 4.Construtores e Destrutores
+
+Os métodos construtores são chamados automaticamentes para inicializar o objeto quando criados.
+
+Criando um método construtor.
+
+**ponto2D.h**
+```
+#ifndef PONTO2D_H
+#define PONTO2D_H
+
+class Ponto2D
+{
+    private:
+        float x, y;
+    public:
+        //metodo construtor
+        Ponto2D();
+        void X(float _x);
+        float X(void);
+        void Y(float _y);
+        float Y(void);
+};
+
+#endif
+```
+
+Implementando/Inicializando o método construtor.
+
+**ponto2D.cpp**
+```
+#include "ponto2D.h"
+
+//construtor inicializando com os pontos x e y em 0
+Ponto2D :: Ponto2D()
+{
+    x = 0;
+    y = 0;
+}
+//construtor inicializando com os pontos x e y com entradas escolhidas pelo programador
+Ponto2D :: Ponto2D(float _x, float _y)
+{
+    x = _x;
+    y = _y;
+}
+void Ponto2D :: X(float _x)
+{
+    x = _x;
+}
+float Ponto2D :: X(void)
+{
+    return x;
+}
+void Ponto2D :: Y(float _y)
+{
+    y = _y;
+}
+float Ponto2D :: Y(void)
+{
+    return y;
+}
+```
+
+**main.cpp**
+
+```
+#include <iostream>
+#include "ponto2D.h"
+
+int main()
+{
+    Ponto2D p(2,2);
+    std::cout << "(x,y) = (" << p.X << ',' << p.Y << ")\n";
+    p.X(2);
+    p.Y(2);
+    std::cout << "(x,y) = (" << p.X << ',' << p.Y << ")\n"; 
+    return 0;
+}
+```
