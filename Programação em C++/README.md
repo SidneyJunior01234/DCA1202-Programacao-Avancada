@@ -275,6 +275,8 @@ Implementando/Inicializando o método construtor.
 ```
 #include "ponto2D.h"
 
+//construtor padrao
+Ponto2D :: Ponto2D(){}
 //construtor inicializando com os pontos x e y em 0
 Ponto2D :: Ponto2D()
 {
@@ -286,6 +288,89 @@ Ponto2D :: Ponto2D(float _x, float _y)
 {
     x = _x;
     y = _y;
+}
+void Ponto2D :: X(float _x)
+{
+    x = _x;
+}
+float Ponto2D :: X(void)
+{
+    return x;
+}
+void Ponto2D :: Y(float _y)
+{
+    y = _y;
+}
+float Ponto2D :: Y(void)
+{
+    return y;
+}
+```
+
+**main.cpp**
+
+```
+#include <iostream>
+#include "ponto2D.h"
+
+int main()
+{
+    Ponto2D p(2,2);
+    std::cout << "(x,y) = (" << p.X << ',' << p.Y << ")\n";
+    p.X(2);
+    p.Y(2);
+    std::cout << "(x,y) = (" << p.X << ',' << p.Y << ")\n"; 
+    return 0;
+}
+```
+
+Ao finalizar o uso do objeto um método é usado, o método destrutor.
+
+**ponto2D.h**
+```
+#ifndef PONTO2D_H
+#define PONTO2D_H
+
+class Ponto2D
+{
+    private:
+        float x, y;
+    public:
+        //metodo construtor
+        Ponto2D();
+        //metodo destrutor
+        ~Ponto2D();
+        void X(float _x);
+        float X(void);
+        void Y(float _y);
+        float Y(void);
+};
+
+#endif
+```
+
+**ponto2D.cpp**
+```
+#include "ponto2D.h"
+
+//construtor padrao
+Ponto2D :: Ponto2D(){}
+//construtor inicializando com os pontos x e y em 0
+Ponto2D :: Ponto2D()
+{
+    x = 0;
+    y = 0;
+}
+//construtor inicializando com os pontos x e y com entradas escolhidas pelo programador
+//caso so passe o valor de x, y recebe 0
+Ponto2D :: Ponto2D(float _x, float _y = 0)
+{
+    x = _x;
+    y = _y;
+}
+Ponto2D :: ~Ponto2D()
+{
+    std :: cout << "Destrutor da classe." << endl;
 }
 void Ponto2D :: X(float _x)
 {
