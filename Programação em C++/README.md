@@ -409,3 +409,28 @@ int main()
 
 ## 5.Uso de Referências
 
+Ao utilizar os parâmetros de uma função, estamos utilizando os valores por cópia da variável que os armazena.
+A passagem de parâmetro por referência, utiliza o endereço da variável passada, alterando assim o valor em determinado
+endereço da memória.
+
+**Passagem de parâmetro por valor**
+
+```
+void alterar_valor_5(int x)
+{
+  std :: cout << "x(entrada) = " << x << std :: endl;
+  x = 5;
+  std :: cout << "x(saida) = " << x << std :: endl;
+}
+```
+
+**Passagem de parâmetro por referência**
+
+```
+void alterar_valor_7(int &x)
+{
+  std :: cout << "x(entrada) = " << x << std :: endl;
+  x = 7;
+  std :: cout << "x(saida) = " << x << std :: endl;
+}
+```
