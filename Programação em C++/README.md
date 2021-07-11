@@ -413,6 +413,8 @@ Ao utilizar os parâmetros de uma função, estamos utilizando os valores por c�
 A passagem de parâmetro por referência, utiliza o endereço da variável passada, alterando assim o valor em determinado
 endereço da memória.
 
+Para isso usamos `&` antes do nome do parâmetro.
+
 **Passagem de parâmetro por valor**
 
 ```
