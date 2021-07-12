@@ -458,3 +458,91 @@ Ponto2D :: Ponto2D(const Ponto2D &p2d)
     std :: cout << "construtor de copia" << std :: endl;
 }
 ```
+
+## 7.Sobrecarga de Funções e Métodos
+
+A aplicação dessa funcionalidade nos dá uma forma que os métodos e funções tenham mais de uma forma específica de uso.
+Temos como exemplo uma função que imprime uma `string`, mas eu gostaria de imprimir um `int` usando a mesma função. Com a sobrecarga
+eu posso fazer isso.
+
+**Exemplo**
+
+```
+//imprimir usando string
+void imprimir(char *c)
+{
+    std :: cout << "string: " << c << std :: endl;
+}
+//imprimir usando string
+void imprimir(int i)
+{
+    std :: cout << "int: " << i << std :: endl;
+}
+```
+
+Acontece o mesmo ao adicionar parâmetros nos construtores, temos como exemplo os construtores de Ponto2D e nos métodos
+X e Y.
+
+**ponto2D.h**
+```
+#ifndef PONTO2D_H
+#define PONTO2D_H
+
+class Ponto2D
+{
+    private:
+        float x, y;
+    public:
+        //metodo construtor
+        Ponto2D();
+        //metodo destrutor
+        ~Ponto2D();
+        void X(float _x);
+        float X(void);
+        void Y(float _y);
+        float Y(void);
+};
+
+#endif
+```
+
+**ponto2D.cpp**
+```
+#include "ponto2D.h"
+
+//construtor padrao
+Ponto2D :: Ponto2D(){}
+//construtor inicializando com os pontos x e y em 0
+Ponto2D :: Ponto2D()
+{
+    x = 0;
+    y = 0;
+}
+//construtor inicializando com os pontos x e y com entradas escolhidas pelo programador
+//caso so passe o valor de x, y recebe 0
+Ponto2D :: Ponto2D(float _x, float _y = 0)
+{
+    x = _x;
+    y = _y;
+}
+Ponto2D :: ~Ponto2D()
+{
+    std :: cout << "Destrutor da classe." << endl;
+}
+void Ponto2D :: X(float _x)
+{
+    x = _x;
+}
+float Ponto2D :: X(void)
+{
+    return x;
+}
+void Ponto2D :: Y(float _y)
+{
+    y = _y;
+}
+float Ponto2D :: Y(void)
+{
+    return y;
+}
+```
