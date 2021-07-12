@@ -546,3 +546,85 @@ float Ponto2D :: Y(void)
     return y;
 }
 ```
+
+## 8.Funções Amigas
+
+Essas funções são externas a classe, têm acesso aos atributos privados e protegidos da classe.
+
+Temos como exemplo o operador binário `*` que nos permite multiplicar valores, mas par aum Vetor2D temos:
+
+```
+class Vetor2D
+{
+    private:
+        float x;
+        float y;
+    public:
+        Vetor2D(float _x, float _y)
+        {
+            x = _x;
+            y = _y;
+        }
+        Vetor2D operator* (float a)
+        {
+            Vetor2D ret;
+            ret.x = x*a;
+            ret.y = y*a;
+            return ret;
+        }
+};
+```
+
+Utilizando esse método.
+
+```
+Vetor2D v1(2,6), v2;
+v2 = v1 * 4;
+```
+
+Esse exemplo é válido, mas e se...
+
+```
+Vetor2D v1(2,6), v2;
+v2 = 4 * v1;
+```
+
+Esse exemplo dá errado, por isso usamos funções amigas para suprir a duncionalidade que precisamos.
+Para isso usamos `friend` antes da definição do método e adicionamos um parâmetro objeto após o valor escalar por assim dizer.
+
+```
+class Vetor2D
+{
+    private:
+        float x;
+        float y;
+    public:
+        Vetor2D(float _x, float _y)
+        {
+            x = _x;
+            y = _y;
+        }
+        //adicionado friend e Vetor2D
+        friend Vetor2D operator* (float a, Vetor2D vet)
+        {
+            Vetor2D ret;
+            ret.x = vet.x*a;
+            ret.y = vet.y*a;
+            return ret;
+        }
+};
+```
+
+Agora podemos usar
+
+```
+Vetor2D v1(2,6), v2;
+v2 = 4 * v1;
+```
+
+Ou podemos usar
+
+```
+Vetor2D v1(2,6), v2;
+v2 = operator(4,v1);
+```
