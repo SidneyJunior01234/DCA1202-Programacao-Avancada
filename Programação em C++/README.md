@@ -436,3 +436,25 @@ void alterar_valor_7(int &x)
   std :: cout << "x(saida) = " << x << std :: endl;
 }
 ```
+
+## 6.Construtor de Cópia
+
+Uma vez que você imprime uma informação ao criar um construtor e/ou um destrutor, pode ser observado nas saídas
+a quantidade de vezes que os objetos foram utilizados.
+Algo bastante interessante é quando é criada uma função e um objeto é passado como parâmetro, ao observar as saídas, pode se notar
+que há um destrutor a mais. Esse destrutor pertence ao parâmetro, lembrando que a passagem de parâmetro é feota por valor.
+
+Com isso podemos utilizar um construtor de cópia para nos auxiliar, onde ele é escrito dessa forma:
+
+`tipo_retorno :: nome_classe(const classe &nome)`
+
+**Exemplo**
+
+```
+Ponto2D :: Ponto2D(const Ponto2D &p2d)
+{
+    x = p2d.x;
+    y = p2d.y;
+    std :: cout << "construtor de copia" << std :: endl;
+}
+```
