@@ -22,6 +22,8 @@ dos exercícios e projetos propostos na grade curricular do curso.
 ### 3.Programando em Módulos
 ### 4.Construtores e Destrutores
 ### 5.Uso de Referências
+### 6.Construtor de Cópia
+### 7.Sobrecarga de Funções e Métodos
 
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
