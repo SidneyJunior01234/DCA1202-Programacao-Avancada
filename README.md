@@ -24,6 +24,8 @@ dos exercícios e projetos propostos na grade curricular do curso.
 ### 5.Uso de Referências
 ### 6.Construtor de Cópia
 ### 7.Sobrecarga de Funções e Métodos
+### 8.Funções Amigas
+### 9.Herança Simples
 
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
