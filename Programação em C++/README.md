@@ -628,3 +628,116 @@ Ou podemos usar
 Vetor2D v1(2,6), v2;
 v2 = operator(4,v1);
 ```
+
+## 9.Herança Simples
+
+Temos como herança, algo herdado de um outro. Compartilhando uma estrutura em comum, Dizemos então que há
+uma relação de herança quando por exemplo `A É UM` com um objeto da classe `B`.
+
+Usamos a heranã da seguinte maneira: ao criar a classe derivada escrevemos em sua declaração.
+
+`class nome_classe_derivada : public classe_base {};`
+
+B é a subclasse ou classe derivada e A é a superclasse ou classe base.
+
+**Exemplo**
+
+**equipamento.h**
+```
+class Equipamento
+{
+    char nome[100];
+    char fabricante[100];
+    float preco;
+    public:
+        void setNome(const char *_nome);
+        void setFabricante(const char *_fabricante);
+        void setPreco(float _preco);
+        char* getNome(void);
+        char* getFabricante(void);
+        float getPreco(void);
+};
+```
+**equipamento.cpp**
+```
+#include "equipamento.h"
+
+void Equipamento::setNome(const char *_nome)
+{
+    nome = _nome;
+}
+void Equipamento::setFabricante(const char *_fabricante)
+{
+    fabricante = _fabricante;
+}
+void Equipamento::setPreco(float _preco)
+{
+    preco = _preco;
+}
+char* Equipamento::getNome(void)
+{
+    return nome;
+}
+char* Equipamento::getFabricante(void)
+{
+    return fabricante;
+}
+float Equipamento::getPreco(void)
+{
+    return preco;
+}
+```
+
+**motor.h**
+```
+#include "equipamento.h"
+class Motor : public Equipamento
+{
+    float potencia;
+    float velocidade;
+    public:
+        void setPotencia(float _potencia);
+        void setVelocidade(float _velocidade);
+        float getPotencia(void);
+        float getVelocidade(void);
+};
+```
+**motor.cpp**
+```
+void setPotencia(float _potencia)
+{
+    potencia = _potencia;
+}
+void setVelocidade(float _velocidade)
+{
+    velocidade = _velocidade;
+}
+float getPotencia(void)
+{
+    return potencia;
+}
+float getVelocidade(void)
+{
+    return velocidade;
+}
+```
+
+**main.cpp**
+```
+int main()
+{
+    Motor m;
+    m.setFabricante("Chevrolet");
+    m.setNome("Corsa");
+    m.setPreco(21890.00);
+    m.setPotencia(1216);
+    m.setVelocidade(280);
+    std::cout << m.getFabricante() << '\n'
+              << m.getnome() << '\n'
+              << m.getFabricante() << '\n'
+              << m.getpreco() << '\n'
+              << m.getpotencia() << '\n'
+              << m.getvelocidade() << '\n'
+    return 0;
+}
+```
