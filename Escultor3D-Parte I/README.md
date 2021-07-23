@@ -58,4 +58,29 @@ No arquivo [sculptor.cpp](https://github.com/SidneyJunior01234/DCA1202-Programac
 
 Incluimos o header e o cpp em um arquivo [main.cpp](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Escultor3D-Parte%20I/main.cpp) e executamos, obtendo o seguinte resultado:
 
-![Escultura_frente.OFF](![image](https://user-images.githubusercontent.com/50020838/126728030-d047a1c1-d958-4540-910f-ba12acb353f4.png))
+```cpp
+#include <iostream>
+#include <fstream>
+#include <cmath>
+
+#include "sculptor.h"
+
+using namespace std;
+
+int main()
+{
+    Sculptor escultor(10,10,10);//tamanho da escultura 10x10x10
+        escultor.setColor(0.5,0,1.0,1);//cor - roxo
+        escultor.putBox(2,3,0,2,2,3);//perna esquerda
+        escultor.putBox(2,3,0,2,4,5);//perna direita
+        escultor.putBox(2,4,2,6,2,5);//tronco
+        escultor.putBox(2,3,3,6,1,2);//braço esquerdo
+        escultor.putBox(2,3,3,6,5,6);//braço esquerdo
+        escultor.putBox(2,3,6,8,2,5);//cabeça
+        escultor.writeOFF("figura.OFF");//nome da escultura e extensao
+    return 0;
+}
+```
+
+![Imagem1](https://user-images.githubusercontent.com/50020838/126728147-e44e1845-4ffa-4b3b-8bb5-b45043ea04e8.png)
+![Imagem2](https://user-images.githubusercontent.com/50020838/126728160-8804e1cc-a7d0-42ad-b33c-ecc5f545599d.png)
