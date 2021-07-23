@@ -27,6 +27,8 @@ dos exercícios e projetos propostos na grade curricular do curso.
 ### 8.Funções Amigas
 ### 9.Herança Simples
 
+# [Escultura 3D - parte 1](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/blob/main/Escultor3D-Parte%20I/README.md)
+
 # Exercícios
 ### [Ponteiros em C](https://github.com/SidneyJunior01234/DCA1202-Programacao-Avancada/tree/main/Ponteiros-C)
 
