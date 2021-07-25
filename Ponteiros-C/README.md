@@ -65,7 +65,7 @@ Errado! vai para 1004 pois depende para o qual o tipo de dado é apontado, no ca
 
 **Exemplo 2:**
 
-```
+```c
 #include <stdio.h>
 
 int main() 
@@ -81,7 +81,7 @@ int main()
 }
 ```
 
-```
+```c
 #include <stdio.h>
 
 int main()
@@ -109,7 +109,7 @@ Array é uma estrutura indexada que nos permite guardar uma quantidade de inform
 os elementos guardados no array.
 
 criando o array e o ponteiro que aponta para ele.
-```
+```c
 int x[10]; //array com capacidade para 10 elementos
   int *px; //ponteiro que aponta para o array nao precisa de &
   //array ja eh referenciado
@@ -121,7 +121,7 @@ int x[10]; //array com capacidade para 10 elementos
 
 Preenchendo e imprimindo valores.
 
-```
+```c
 //adicionando elementos no array
   for(i = 0; i < 10; i++)
   {
@@ -140,7 +140,7 @@ Preenchendo e imprimindo valores.
 Imprimindo os valores e endereço, uma forma de observar o conteúdo anterior. Pois estamos lidando com inteiros que ocupam 4 bytes na memória,
 logo observamos que para cada espaço alocado temos uma diferença de 4 bytes no endereço.
 
-```
+```c
 for(i = 0; i < 10; i++)
   {
     //printf("*p = %d, enderec = %p\n",*(px + 1 + i),(px + 1 + i)); // imprimindo o valor que px aponta e seu endereco
@@ -186,7 +186,7 @@ No malloc passamos a quantidade de elementos x(multiplicação) o tamanho do tip
 
 `quantidade de elementos e multiplicar pelo sizeof do tipo do elemnto`
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -200,7 +200,7 @@ Após alocar e usar o array alocado, temos que liberar a memória. Para isso usa
 
 **Exemplo de código:**
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -257,7 +257,7 @@ Os endereços guardados no array auxiliar, nos permite acessar os array que se c
 
 Acessando o elemento `x[2][3]`
 
-```
+```c
 *(x + 2) -> int* C que aponta para outro array
 *(x + 2) + 3 -> E endereço do inteiro.
 *(*(x + 2) + 3) -> valor de x[2][3]
@@ -265,7 +265,7 @@ Acessando o elemento `x[2][3]`
 
 Alocando a matriz:
 
-```
+```c
 int nl = 3, nc = 3;
   int **x;
 
@@ -302,12 +302,12 @@ Vetor auxiliar: irá apontar endereços dos inícios das linhas, que serão aloc
 **Etapas:**
 
 1.Criação do ponteiro e variáveis a serem utilizadas.
-```
+```c
 int **x, nl, nc, i;
 ```
 
 2.Alocar o bloco auxiliar
-```
+```c
 x = malloc(nl * sizeof(int*));
 ```
 | A |  B | C | ... | n |
@@ -316,7 +316,7 @@ x = malloc(nl * sizeof(int*));
 3.Alocação das linhas
 
 As linhas são alocadas no primeiro elemento do bloco auxiliar
-```
+```c
 z[0] = malloc(nc * nl * sizeof(int));
 ```
 | A |  B | C | ... | n |
@@ -326,7 +326,7 @@ z[0] = malloc(nc * nl * sizeof(int));
 
 Guardar os endereços desde o primeiro elemento ao último elemento da matriz.
 `z[i - 1] + nc` vai para nc elementos adiantes, no caso o primeiro elemento da próxima linha.
-```
+```c
 for(i = 1; i < nl; i++)
 {
     z[i] = z[i - 1] + nc;
@@ -334,19 +334,19 @@ for(i = 1; i < nl; i++)
 ```
 
 5.Liberar a matriz
-```
+```c
 free(x[0]);
 ```
 
 6.Liberar o bloco auxiliar
-```
+```c
 free(x);
 ```
 ## 6.Structs
 
 Os structs permitem agregar características em uma variável, podemos dizer que estamos "criando um tipo de variável".
 
-```
+```c
 struct Imagem
 {
     char formato[MAX_EXTEN];//ppm, jpg, png, jpeg
@@ -358,7 +358,7 @@ struct Imagem
 
 Para acessar os atributos da estrutura, utilizamos `->`.
 
-```
+```c
 #include <stdio.h>
 
 struct Discente
@@ -390,7 +390,7 @@ int main()
 
 Podemos também **Alocar arrays de estruturas**.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -421,7 +421,7 @@ int main()
 Ponteiros para funções guardam os endereços para **áreas de códigos**.
 
 temos a seguinte função:
-```
+```c
 int Funcao(int a)
 {
     return a;
@@ -431,19 +431,19 @@ int Funcao(int a)
 Agora será criado o ponteiro para a função, mas como?
 
 Resposta: da seguinte maneira.
-```
+```c
 int (*pf)(int) = &Funcao;
 ```
 A declaração do ponteiro precisa de um tipo de retorno `int`, um nome `(*nome_ponteiro)`, informar os parâmetros recebidos `(int)` e passo o endereço da função `&Funcao`. 
 
 Mas como utilizamos o ponteiro?
-```
+```c
 printf("usamos assim...\n");
 printf("numero %d", pf(1));
 ```
 
 **Exemplos:**
-```
+```c
 #include <stdio.h>
 
 int Soma(int a,int b)
@@ -460,7 +460,7 @@ int main()
 }
 ```
 
-```
+```c
 #include <stdio.h>
 void soma(int a, int b)
 {
@@ -492,7 +492,7 @@ int main()
 
 Podemos passar também ponteiros para funções como parâmetro de outras funções.
 
-```
+```c
 #include <stdio.h>
 
 int funcao(int a)
@@ -513,7 +513,7 @@ int main(void)
 
 Podemos também criar funções genéricas.
 
-```
+```c
 float trapezio(float (*func)(float), float a, float b, int n);
 ```
 
@@ -527,7 +527,7 @@ Para ler/escrever de/em arquivos temos as funções: `getc()` / `putc()`
 
 **Exemplo:**
 
-```
+```c
 FILE *entrada, *saida;
 c = getc(entrada);
 putc(c,saida);
@@ -536,7 +536,7 @@ putc(c,saida);
 Com um arquivo com extensão .txt no mesmo diretório do programa, podemos compilar 
 o seguinte código.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -583,7 +583,7 @@ Para ler/escrever de/em arquivos temos as funções: `fgets()` / `fputs()`
 
 **Exemplo:**
 
-```
+```c
 FILE *entrada, *saida;
 char buffer[50]; //local onde a variavel literal esta armazenada, com tamanho maximo
 fgets(buffer, 50, entrada);
@@ -592,7 +592,7 @@ fputs(buffet, fout);
 
 Com um arquivo no mesmo diretório do programa.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -647,7 +647,7 @@ Para a getline funcionar é necessário 3 parâmetros:
 
 Com um arquivo no mesmo diretório do programa.
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
