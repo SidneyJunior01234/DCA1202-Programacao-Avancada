@@ -723,7 +723,7 @@ float getVelocidade(void)
 ```
 
 **main.cpp**
-```
+```cpp
 int main()
 {
     Motor m;
@@ -743,7 +743,191 @@ int main()
 ```
 ## 10.Efeitos da Herança
 
+```cpp
+class nome_classe
+{
+    private:
+        char nome[100];
+    protected:
+        float preco:
+};
 ```
 
+Os atributos `private` são somente acessíveis a propria classe e a classes amigas.
+Os atributos `protected` são acessíveis também por herdeiras e amigas.
+
+Mas o que é o `public` em ```cpp class classe_herdeira :: public classe_herdada```?
+
+o `public` representa a forma que a classe herdeira irá herdar de sua super classe.
+
+![image](https://user-images.githubusercontent.com/50020838/126913698-e6b8a18e-4bba-430e-9aa4-01ebf40dd537.png)
+
+Todos os métodos criados na super classe são herdados pela subclasse, menos os construtores e destrutores. Ao criar o objeto, primeiro é criado 
+o construtor da super classe e depois é criado o da sub classe. Logo após ao finalizar o destrutor da sub classe é chamado e por fim o da super classe.
+
+Caso queira usar construtorres passando valores, podemos fazer isso.
+
+**Exemplo**
+
+**equipamento.h**
+```cpp
+class Equipamento
+{
+    char nome[100];
+    char fabricante[100];
+    float preco;
+    public:
+        Equipamento(char *nome, char *fabricante, float preco);
+        void setNome(const char *_nome);
+        void setFabricante(const char *_fabricante);
+        void setPreco(float _preco);
+        char* getNome(void);
+        char* getFabricante(void);
+        float getPreco(void);
+};
+```
+**equipamento.cpp**
+```cpp
+#include "equipamento.h"
+
+Equipamento::Equipamento(char *nome, char *fabricante, float preco)
+{
+    this -> nome = nome;
+    this -> fabricante = fabricante;
+    this -> preco = preco;
+}
+void Equipamento::setNome(const char *_nome)
+{
+    nome = _nome;
+}
+void Equipamento::setFabricante(const char *_fabricante)
+{
+    fabricante = _fabricante;
+}
+void Equipamento::setPreco(float _preco)
+{
+    preco = _preco;
+}
+char* Equipamento::getNome(void)
+{
+    return nome;
+}
+char* Equipamento::getFabricante(void)
+{
+    return fabricante;
+}
+float Equipamento::getPreco(void)
+{
+    return preco;
+}
 ```
 
+**motor.h**
+```cpp
+#include "equipamento.h"
+class Motor : public Equipamento
+{
+    float potencia;
+    float velocidade;
+    public:
+        void setPotencia(float _potencia);
+        void setVelocidade(float _velocidade);
+        float getPotencia(void);
+        float getVelocidade(void);
+};
+```
+**motor.cpp**
+```cpp
+Motor::Motor(float potencia, float velocidade, char *nome, char *fabricante, float preco) : Equipamento(nome,fabricante,preco)
+{
+    this -> potencia = potencia;
+    this -> velocidade = velocidade;
+}
+void setPotencia(float _potencia)
+{
+    potencia = _potencia;
+}
+void setVelocidade(float _velocidade)
+{
+    velocidade = _velocidade;
+}
+float getPotencia(void)
+{
+    return potencia;
+}
+float getVelocidade(void)
+{
+    return velocidade;
+}
+```
+
+**main.cpp**
+```cpp
+int main()
+{
+    Motor m(1216,280,"Corsa","Chevrolet",21890.00);
+    //m.setFabricante("Chevrolet");
+    //m.setNome("Corsa");
+    //m.setPreco(21890.00);
+    //m.setPotencia(1216);
+    //m.setVelocidade(280);
+    std::cout << m.getFabricante() << '\n'
+              << m.getnome() << '\n'
+              << m.getFabricante() << '\n'
+              << m.getpreco() << '\n'
+              << m.getpotencia() << '\n'
+              << m.getvelocidade() << '\n'
+    return 0;
+}
+```
+
+O que pode dar errado?
+
+```cpp
+class Base
+{
+    protected:
+        int a, b;
+};
+class Derivada : public Base
+{
+    int c;
+};
+
+int main()
+{
+    Base b;
+    Derivada d;
+    b = d;
+    d = b; // ERRO: d possui partes indefinidas
+}
+```
+
+Como Derivada herda de Base, há componentes de Base em Derivada, mas não o contrário. Para corrigir isso, basta criar uma sobrecarga no `operator=`.
+
+```cpp
+class Base
+{
+    protected:
+        int a, b;
+};
+class Derivada : public Base
+{
+    int c;
+    public:
+        void operator=(Base &x)
+        {
+            a = x.getA();
+            b = x.getB();
+            c = ;
+        }
+};
+
+int main()
+{
+    Base b;
+    Derivada d;
+    b = d;
+    d = b; // Agora sim...
+}
+```
