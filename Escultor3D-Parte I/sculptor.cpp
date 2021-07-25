@@ -29,6 +29,8 @@ Sculptor::Sculptor(int _nx, int _ny, int _nz)//construtor
     {
         v[0][i] = v[0][i-1] + nx;
     }
+
+    std :: cout << "Area da escultura criada com tamanho: " << nx << ' x ' << ny << ' x ' << nz << std :: endl;
 }
 
 Sculptor::~Sculptor()//destrutor
