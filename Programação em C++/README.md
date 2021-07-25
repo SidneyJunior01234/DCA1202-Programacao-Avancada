@@ -7,7 +7,7 @@ Programação Orientada a Objetos (**POO**).
 
 **Exemplo em C**
 
-```
+```cpp
 #include <stdio.h>
 
 int main()
@@ -19,7 +19,7 @@ int main()
 
 **Exemplo em C++**
 
-```
+```cpp
 #include <iostream>
 
 int main()
@@ -34,12 +34,12 @@ Os arquivos dos programas terão extensão **.cpp** que serão compilados e os d
 **Exemplo de como usaremos isso nas próximas aulas**
 
 **func1.hpp**
-```
+```cpp
 void func1(void);
 ```
 
 **func1.cpp**
-```
+```cpp
 #include "func1.hpp"
 #include <iostream>
 
@@ -50,12 +50,12 @@ void func1(void)
 ```
 
 **func2.hpp**
-```
+```cpp
 void func2(void);
 ```
 
 **func2.cpp**
-```
+```cpp
 #include "func2.hpp"
 #include <iostream>
 
@@ -66,7 +66,7 @@ void func2(void)
 ```
 
 **main.cpp**
-```
+```cpp
 #include <iostream> 
 #include "func1.hpp"
 #include "func2.hpp"
@@ -95,7 +95,7 @@ As classes possuem propriedades e funcionalidades.
 
 **Exemplo de uma classe:**
 
-```
+```cpp
 class nome_da_classe
 {
     private:
@@ -123,7 +123,7 @@ Sendo que agora são categorizadas como:
 
 **[Exemplo](https://replit.com/@SidneyAlves1/Primeira-Classe#main.cpp):**
 
-```
+```cpp
 class Ponto2D
 {
     private:
@@ -171,7 +171,7 @@ Chamamos essa proteção de **Encapsulamento**, um dos pilares da **POO**.
 Para modularizar, devemos ter os arquivos `.cpp` e `.h ou .hpp`. Usando o exemplo anterior:
 
 **ponto2D.h**
-```
+```cpp
 #ifndef PONTO2D_H
 #define PONTO2D_H
 
@@ -193,7 +193,7 @@ Para definir os métodos da classe, usamos o operador de escopo `::` da seguinte
 
 `tipo` de retorno do método, `classe` ao qual pertence, `::` operador de escopo, `nome` da função e `parâmetros` da função.
 
-```
+```cpp
 tipo classe :: nome(parametros)
 {
     //trecho de código
@@ -201,7 +201,7 @@ tipo classe :: nome(parametros)
 ```
 
 **ponto2D.cpp**
-```
+```cpp
 #include "ponto2D.h"
 
 void Ponto2D :: X(float _x)
@@ -224,7 +224,7 @@ float Ponto2D :: Y(void)
 
 **main.cpp**
 
-```
+```cpp
 #include <iostream>
 #include "ponto2D.h"
 
@@ -249,7 +249,7 @@ Os métodos construtores são chamados automaticamentes para inicializar o objet
 Criando um método construtor.
 
 **ponto2D.h**
-```
+```cpp
 #ifndef PONTO2D_H
 #define PONTO2D_H
 
@@ -272,7 +272,7 @@ class Ponto2D
 Implementando/Inicializando o método construtor.
 
 **ponto2D.cpp**
-```
+```cpp
 #include "ponto2D.h"
 
 //construtor padrao
@@ -309,7 +309,7 @@ float Ponto2D :: Y(void)
 
 **main.cpp**
 
-```
+```cpp
 #include <iostream>
 #include "ponto2D.h"
 
@@ -327,7 +327,7 @@ int main()
 Ao finalizar o uso do objeto um método é usado, o método destrutor.
 
 **ponto2D.h**
-```
+```cpp
 #ifndef PONTO2D_H
 #define PONTO2D_H
 
@@ -350,7 +350,7 @@ class Ponto2D
 ```
 
 **ponto2D.cpp**
-```
+```cpp
 #include "ponto2D.h"
 
 //construtor padrao
@@ -392,7 +392,7 @@ float Ponto2D :: Y(void)
 
 **main.cpp**
 
-```
+```cpp
 #include <iostream>
 #include "ponto2D.h"
 
@@ -417,7 +417,7 @@ Para isso usamos `&` antes do nome do parâmetro.
 
 **Passagem de parâmetro por valor**
 
-```
+```cpp
 void alterar_valor_5(int x)
 {
   std :: cout << "x(entrada) = " << x << std :: endl;
@@ -428,7 +428,7 @@ void alterar_valor_5(int x)
 
 **Passagem de parâmetro por referência**
 
-```
+```cpp
 void alterar_valor_7(int &x)
 {
   std :: cout << "x(entrada) = " << x << std :: endl;
@@ -450,7 +450,7 @@ Com isso podemos utilizar um construtor de cópia para nos auxiliar, onde ele é
 
 **Exemplo**
 
-```
+```cpp
 Ponto2D :: Ponto2D(const Ponto2D &p2d)
 {
     x = p2d.x;
@@ -467,7 +467,7 @@ eu posso fazer isso.
 
 **Exemplo**
 
-```
+```cpp
 //imprimir usando string
 void imprimir(char *c)
 {
@@ -484,7 +484,7 @@ Acontece o mesmo ao adicionar parâmetros nos construtores, temos como exemplo o
 X e Y.
 
 **ponto2D.h**
-```
+```cpp
 #ifndef PONTO2D_H
 #define PONTO2D_H
 
@@ -507,7 +507,7 @@ class Ponto2D
 ```
 
 **ponto2D.cpp**
-```
+```cpp
 #include "ponto2D.h"
 
 //construtor padrao
@@ -553,7 +553,7 @@ Essas funções são externas a classe, têm acesso aos atributos privados e pro
 
 Temos como exemplo o operador binário `*` que nos permite multiplicar valores, mas par aum Vetor2D temos:
 
-```
+```cpp
 class Vetor2D
 {
     private:
@@ -577,14 +577,14 @@ class Vetor2D
 
 Utilizando esse método.
 
-```
+```cpp
 Vetor2D v1(2,6), v2;
 v2 = v1 * 4;
 ```
 
 Esse exemplo é válido, mas e se...
 
-```
+```cpp
 Vetor2D v1(2,6), v2;
 v2 = 4 * v1;
 ```
@@ -592,7 +592,7 @@ v2 = 4 * v1;
 Esse exemplo dá errado, por isso usamos funções amigas para suprir a duncionalidade que precisamos.
 Para isso usamos `friend` antes da definição do método e adicionamos um parâmetro objeto após o valor escalar por assim dizer.
 
-```
+```cpp
 class Vetor2D
 {
     private:
@@ -617,14 +617,14 @@ class Vetor2D
 
 Agora podemos usar
 
-```
+```cpp
 Vetor2D v1(2,6), v2;
 v2 = 4 * v1;
 ```
 
 Ou podemos usar
 
-```
+```cpp
 Vetor2D v1(2,6), v2;
 v2 = operator(4,v1);
 ```
@@ -643,7 +643,7 @@ B é a subclasse ou classe derivada e A é a superclasse ou classe base.
 **Exemplo**
 
 **equipamento.h**
-```
+```cpp
 class Equipamento
 {
     char nome[100];
@@ -659,7 +659,7 @@ class Equipamento
 };
 ```
 **equipamento.cpp**
-```
+```cpp
 #include "equipamento.h"
 
 void Equipamento::setNome(const char *_nome)
@@ -689,7 +689,7 @@ float Equipamento::getPreco(void)
 ```
 
 **motor.h**
-```
+```cpp
 #include "equipamento.h"
 class Motor : public Equipamento
 {
@@ -703,7 +703,7 @@ class Motor : public Equipamento
 };
 ```
 **motor.cpp**
-```
+```cpp
 void setPotencia(float _potencia)
 {
     potencia = _potencia;
@@ -741,3 +741,9 @@ int main()
     return 0;
 }
 ```
+## 10.Efeitos da Herança
+
+```
+
+```
+
